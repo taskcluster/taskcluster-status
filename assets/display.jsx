@@ -40,20 +40,20 @@ var Monitor = React.createClass({
     };
   },
 
-  componentDidMount: function() {
-    // Create method to reload
-    var reload = function() {
-      uptime.loadMonitor(this.props.monitor).then(function(data) {
-        this.setState(data);
-        this.setState({loading: false});
-      }.bind(this));
-    }.bind(this);
+  // Create method to reload
+  reload: function() {
+    uptime.loadMonitor(this.props.monitor).then(function(data) {
+      this.setState(data);
+      this.setState({loading: false});
+    }.bind(this));
+  },
 
+  componentDidMount: function() {
     // Reload every 5 minutes
-    this.ivtHandler = setInterval(reload, 5 * 60 * 1000);
+    this.ivtHandler = setInterval(this.reload, 5 * 60 * 1000);
 
     // Reload immediately
-    reload();
+    this.reload();
   },
 
   componentWillUnmount: function() {
@@ -73,43 +73,43 @@ var Monitor = React.createClass({
     } else {
       contents = (
         <span>
-        <div>
-          <div className="status-uptime">
-            <div className="status-icon">
-              <i className={STATE_ICON[this.state.state]}></i><br/>
-              <b>State: </b>
-              <span className={STATE_LABEL[this.state.state]}>
-                {this.state.state}
-              </span>
-            </div>
-            <div className="panel panel-default uptime-panel">
-              <div className="panel-heading">
-                <h3 className="panel-title">
-                  Uptime
-                </h3>
+          <div ref="statusInfo">
+            <div className="status-uptime" ref="statusUptime">
+              <div className="status-icon">
+                <i className={STATE_ICON[this.state.state]}></i><br/>
+                <b>State: </b>
+                <span className={STATE_LABEL[this.state.state]}>
+                  {this.state.state}
+                </span>
               </div>
-              <div className="panel-body">
-                <dl className="dl-horizontal">
-                  <dt>24 hours</dt>
-                  <dd>{this.state.uptime.day + ' %'}</dd>
-                  <dt>Week</dt>
-                  <dd>{this.state.uptime.week + ' %'}</dd>
-                  <dt>Month</dt>
-                  <dd>{this.state.uptime.month + ' %'}</dd>
-                  <dt>All time</dt>
-                  <dd>{this.state.uptime.allTime + ' %'}</dd>
+              <div className="panel panel-default uptime-panel">
+                <div className="panel-heading">
+                  <h3 className="panel-title">
+                    Uptime
+                  </h3>
+                </div>
+                <div className="panel-body">
+                  <dl className="dl-horizontal">
+                    <dt>24 hours</dt>
+                    <dd>{this.state.uptime.day + ' %'}</dd>
+                    <dt>Week</dt>
+                    <dd>{this.state.uptime.week + ' %'}</dd>
+                    <dt>Month</dt>
+                    <dd>{this.state.uptime.month + ' %'}</dd>
+                    <dt>All time</dt>
+                    <dd>{this.state.uptime.allTime + ' %'}</dd>
 
-                </dl>
+                  </dl>
+                </div>
               </div>
             </div>
+            {
+              this.state.responseTimes.length > 0 ?
+              <Graph responseTimes={this.state.responseTimes}/>
+              : <div style={{ height: '160px', display: 'inline-block'}}></div>
+            }
           </div>
-          {
-            this.state.responseTimes.length > 0 ?
-            <Graph responseTimes={this.state.responseTimes}/>
-            : <div style={{ height: '160px', display: 'inline-block'}}></div>
-          }
-        </div>
-        <Log entries={this.state.log}/>
+          <Log entries={this.state.log}/>
         </span>
       );
     }
@@ -209,7 +209,6 @@ var Graph = React.createClass({
     if (this.paper) {
       this.renderGraph();
     }
-
     return <div ref="canvas" className="canvas"></div>
   }
 });
