@@ -286,7 +286,7 @@ var Log = React.createClass({
           <h3 className="panel-title">
             <i className={titleIcon}></i>
             &nbsp;&nbsp;&nbsp;
-            <b>Uptime History</b>
+            <b>Incident History</b>
           </h3>
         </div>
         {body}
