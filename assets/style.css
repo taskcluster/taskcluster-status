@@ -1,0 +1,62 @@
+#monitor-title {
+  margin-top: 0px;
+}
+
+#loading {
+  text-align: center;
+  padding:    20px;
+}
+
+#loading .glyphicon {
+  font-size:    80pt;
+}
+
+.status-uptime {
+  display:  inline-block;
+  vertical-align: top;
+}
+
+.status-icon {
+  padding:        10px;
+  text-align:     center;
+  display:        inline-block;
+  vertical-align: top;
+  padding-top:    20px;
+}
+.status-icon .glyphicon {
+  font-size:    50pt;
+}
+
+.uptime-panel {
+  display:        inline-block;
+  margin-left:    20px;
+  margin-bottom:  0px;
+}
+
+.uptime-panel h3 {
+  margin-top:     0px;
+}
+
+.uptime-panel dl {
+  margin-bottom:     0px;
+}
+
+.uptime-panel dt {
+  width:          70px;
+}
+
+.uptime-panel dd {
+  margin-left:    80px;
+}
+
+.canvas {
+  display:        inline-block;
+}
+
+.log-title {
+  cursor:         pointer;
+}
+
+.log-table, .log-panel {
+  margin-bottom:  0px;
+}

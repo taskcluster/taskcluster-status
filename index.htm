@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TaskCluster - Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap and Awesome Font styles-->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-theme.min.css">
+
+    <!-- Custom styling-->
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <!-- jQuery and Bootstrap Javascript-->
+    <script src="/assets/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js">
+    </script>
+
+    <!-- Raphael-->
+    <script src="/assets/raphael/raphael-min.js"></script>
+    <script src="/assets/raphael/g.raphael-min.js"></script>
+    <script src="/assets/raphael/g.line-min.js"></script>
+
+    <!-- superagent-promise -->
+    <script src="/assets/superagent-promise.js"></script>
+    <script src="/assets/moment.min.js"></script>
+    <script src="/assets/react.js"></script>
+    <script src="/assets/JSXTransformer.js"></script>
+
+    <!-- custom code -->
+    <script src="/assets/uptime.js"></script>
+    <script type="text/jsx" src="/assets/display.jsx"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <header class="col-md-10 col-md-offset-1" style="margin-top: 30px;">
+          <nav role="navigation" class="navbar navbar-default">
+            <div class="navbar-header">
+              <a href="/" class="navbar-brand">
+                TaskCluster - Status
+              </a>
+            </div>
+          </nav>
+        </header>
+      </div>
+      <div class="row">
+        <section class="col-md-10 col-md-offset-1" id="monitors">
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
