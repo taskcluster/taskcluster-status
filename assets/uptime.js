@@ -64,7 +64,7 @@ var loadMonitor = function(monitor) {
       var log = (monitor.log || []).map(function(entry) {
         return {
           state:      LOG_STATES[entry.type],
-          date:       moment(entry.datetime, "MM/DD/YY HH:mm:ss").toDate()
+          date:       moment(entry.datetime, "MM/DD/YYYY HH:mm:ss").toDate()
         };
       });
       log.sort(function(a, b) {
@@ -79,7 +79,7 @@ var loadMonitor = function(monitor) {
       var responseTimes = (monitor.responsetime || []).map(function(entry) {
         return {
           time:       parseInt(entry.value),
-          date:       moment(entry.datetime, "MM/DD/YY HH:mm:ss").toDate()
+          date:       moment(entry.datetime, "MM/DD/YYYY HH:mm:ss").toDate()
         };
       });
       responseTimes.sort(function(a, b) {
