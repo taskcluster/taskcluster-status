@@ -49,8 +49,9 @@ var Monitor = React.createClass({
   },
 
   componentDidMount: function() {
+    // Don't reload it somehow causes the browser to take a lot of memory
     // Reload every 5 minutes
-    this.ivtHandler = setInterval(this.reload, 5 * 60 * 1000);
+    //this.ivtHandler = setInterval(this.reload, 5 * 60 * 1000);
 
     // Reload immediately
     this.reload();

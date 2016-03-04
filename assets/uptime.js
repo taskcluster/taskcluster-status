@@ -21,6 +21,10 @@ var MONITORS = [
     title:    'events.taskcluster.net',
     name:     'events.taskcluster.net',
     key:      'm776321033-e82bb32adfa08a0bba0002c6'
+  }, {
+    title:    'index.taskcluster.net',
+    name:     'index.taskcluster.net',
+    key:      'm776362434-85a6996de0f9c73cf21bbf89'
   }
 ];
 
@@ -50,7 +54,7 @@ var loadMonitor = function(monitor) {
     .get('http://api.uptimerobot.com/getMonitors')
     .query({
       apiKey:                     monitor.key,
-      customUptimeRatio:          '1-7-30',
+      customUptimeRatio:          '1-7-30-365',
       logs:                       1,
       responseTimes:              1,
       format:                     'json',
@@ -93,6 +97,7 @@ var loadMonitor = function(monitor) {
           day:      parseFloat(uptimes[0]),
           week:     parseFloat(uptimes[1]),
           month:    parseFloat(uptimes[2]),
+          year:     parseFloat(uptimes[3]),
           allTime:  parseFloat(monitor.alltimeuptimeratio)
         },
         state:          STATUS_STATE[monitor.status],
