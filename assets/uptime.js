@@ -29,6 +29,10 @@ var MONITORS = [
     title:    'index.taskcluster.net',
     name:     'index.taskcluster.net',
     key:      'm776362434-85a6996de0f9c73cf21bbf89'
+  }, {
+    title:    'secrets.taskcluster.net',
+    name:     'secrets.taskcluster.net',
+    key:      'm777577313-6d58b81186c4064cf7a8d1e1'
   }
 ];
 
