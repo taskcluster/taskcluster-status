@@ -18,6 +18,10 @@ var MONITORS = [
     name:     'auth.taskcluster.net',
     key:      'm776208480-28abc3b309cb0e526a5ebce8'
   }, {
+    title:    'aws-provisioner.taskcluster.net',
+    name:     'provisioner',
+    key:      'm776120201-37b5da206dfd8de4b00ae25b'
+  }, {
     title:    'events.taskcluster.net',
     name:     'events.taskcluster.net',
     key:      'm776321033-e82bb32adfa08a0bba0002c6'
@@ -25,6 +29,10 @@ var MONITORS = [
     title:    'index.taskcluster.net',
     name:     'index.taskcluster.net',
     key:      'm776362434-85a6996de0f9c73cf21bbf89'
+  }, {
+    title:    'secrets.taskcluster.net',
+    name:     'secrets.taskcluster.net',
+    key:      'm777577313-6d58b81186c4064cf7a8d1e1'
   }
 ];
 
